@@ -3,954 +3,682 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-10-22 Sat 06:43 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Derek Daehyun Ji</title>
-<meta name="author" content="지대현" />
-<meta name="generator" content="Org Mode" />
-<meta name="google-site-verification" content="_nVdOKyv00hCnRzQvi5IDn47T7MspWyhkC0MTBzflVI" />
-<style>
-  #content { max-width: 60em; margin: auto; }
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    top: -8px;
-    right: 12px;
-    padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
-</style>
-<link rel="stylesheet" type="text/css" href="main.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Derek Daehyun Ji</title>
+  <meta name="author" content="Daehyun Ji" />
+  <style type="text/css">
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: #18212f;
+      background: #f4f7fb;
+      line-height: 1.7;
+    }
+    a { color: #0b66c3; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    #content {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 64px 20px;
+    }
+    .hero {
+      background: linear-gradient(135deg, #0b1f3a 0%, #114b8b 55%, #3f8cff 100%);
+      color: #ffffff;
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 18px 50px rgba(14, 39, 84, 0.18);
+    }
+    .hero-inner {
+      display: table;
+      width: 100%;
+    }
+    .hero-photo,
+    .hero-text {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .hero-photo {
+      width: 220px;
+      padding-right: 28px;
+    }
+    .hero-photo img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 4px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+    }
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 42px;
+      line-height: 1.1;
+    }
+    .hero p {
+      margin: 8px 0;
+      color: rgba(255,255,255,0.92);
+    }
+    .hero-links {
+      margin-top: 18px;
+    }
+    .hero-links a {
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 14px;
+    }
+    .grid {
+      margin-top: 28px;
+      display: table;
+      width: 100%;
+      border-spacing: 20px 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+    .col-main,
+    .col-side {
+      display: table-cell;
+      vertical-align: top;
+    }
+    .col-main { width: 68%; }
+    .col-side { width: 32%; }
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(18, 35, 66, 0.08);
+      margin-bottom: 20px;
+    }
+    .highlight-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      border: 1px solid #e1ebfb;
+    }
+    h2 {
+      margin: 0 0 16px 0;
+      color: #0f3d78;
+      font-size: 26px;
+      line-height: 1.2;
+    }
+    h3 {
+      margin: 0 0 10px 0;
+      font-size: 19px;
+      color: #17345c;
+    }
+    .muted { color: #5a697e; }
+    .chips { margin-top: 16px; }
+    .chip {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 7px 12px;
+      background: #eaf2ff;
+      color: #0f4f98;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .metrics {
+      margin-top: 18px;
+      display: table;
+      width: 100%;
+      border-spacing: 12px;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    .metric {
+      display: table-cell;
+      background: #f7faff;
+      border: 1px solid #e3ecfb;
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      color: #0f3d78;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .pub {
+      padding: 18px 0;
+      border-top: 1px solid #e8eef7;
+    }
+    .pub.first { border-top: none; padding-top: 0; }
+    .pub-title {
+      font-size: 19px;
+      font-weight: bold;
+      color: #17263f;
+      margin-bottom: 6px;
+    }
+    .pub-meta {
+      color: #5a697e;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .pub-links a,
+    .inline-links a {
+      display: inline-block;
+      margin-right: 14px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .badges {
+      margin: 8px 0 10px 0;
+    }
+    .badge {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #edf5ff;
+      color: #0f4f98;
+      font-size: 12px;
+      font-weight: bold;
+      border: 1px solid #d7e6ff;
+    }
+    .badge.dark {
+      background: #17345c;
+      color: #ffffff;
+      border-color: #17345c;
+    }
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .timeline li {
+      padding: 0 0 18px 18px;
+      border-left: 2px solid #d9e6fb;
+      position: relative;
+      margin-left: 6px;
+    }
+    .timeline li:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #2f7de1;
+      position: absolute;
+      left: -6px;
+      top: 7px;
+    }
+    .timeline li.last { padding-bottom: 0; }
+    .timeline .role {
+      display: block;
+      font-weight: bold;
+      color: #17345c;
+    }
+    .timeline .period {
+      display: block;
+      color: #5a697e;
+      font-size: 14px;
+      margin: 2px 0 6px 0;
+    }
+    .list-tight {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .list-tight li { margin-bottom: 8px; }
+    .footer-note {
+      font-size: 13px;
+      color: #6a778b;
+      margin-top: 10px;
+    }
+    @media screen and (max-width: 900px) {
+      .hero-inner, .hero-photo, .hero-text, .grid, .col-main, .col-side, .metrics, .metric {
+        display: block;
+        width: auto;
+      }
+      .hero-photo {
+        padding-right: 0;
+        padding-bottom: 18px;
+      }
+      .hero-photo img {
+        width: 140px;
+        height: 140px;
+      }
+      h1 { font-size: 34px; }
+      .grid {
+        margin-left: 0;
+        margin-right: 0;
+        border-spacing: 0;
+      }
+      .metrics {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .metric { margin-bottom: 12px; }
+    }
+  </style>
 </head>
 <body>
-<div id="content" class="content">
-<h1 class="title" style="text-align: center;">Derek Daehyun Ji</h1>
-<div style="text-align: center;">
-<img src="assets/daehyunji.jpg" width="20%">
-<p style="text-align: center;">
-captainzone [at] gmail.com, derek.ji [at] samsung.com <br />
-Samsung Electroincs, Suwon, South Korea.
-</div>
-
-<h2 style="color:rgb(0, 102, 204)">Brief Bio</h2>
-<p>
-I am a Master (Vice President of Technology) at Samsung Electronics, Suwon, South Korea</a>
-and as the Head of the Manufacturing & Material Handling AI Lab at the AI Center, DS Division, I am currently leading the development of AI & Robotics technologies for production optimization and logistics automation.
-Prior working at AI Center, I led the development of AI technologies for ADAS and Autonomous driving at <a href="https://www.sait.samsung.co.kr/saithome/main/main.do"> Samsung Advanced Institute of Technology</a>. 
-Before that I was a Visiting Researcher at <a href="https://mila.quebec/en/"> Montreal Institute for Learning Algorithms(MILA)</a> (Professor  <a href="http://www.iro.umontreal.ca/~slacoste/"> Simon Lacoste-Julien</a>). 
-I completed my PhD at POSTECH(Pohang University of Science and Technology) under the supervision of Professor  
-<a href="https://eee.postech.ac.kr/professor_type/%EC%9B%90%EC%83%81%EC%B2%A0/"> Sangchul Won</a>.
-My current and past research work broadly involve AI, computer vision, robotics.
-More recently, I am primarily interested in AI based Autonomous Machine = AI + Robotics. 
-My mission is "to benefit humanity widely through cutting-edge AI technologies."
-My vision is "to be a pioneer leading the advancement of AI, creating key technologies for future society through innovative research."
-</p>
-
-<a href="https://scholar.google.co.kr/citations?user=WEZZefcAAAAJ&hl=ko">[Google Scholar]</a>
-<a href="https://www.linkedin.com/in/captainzone/">[LinkedIn]</a>
-<a href="https://www.facebook.com/groups/AutonomousDrivingKR">[Facebook]</a>
-<a href="assets/cv.pdf">[CV]</a>
-
-    
-<div id="outline-container-org3b109b4" class="outline-2">    
-<h2 style="color:rgb(0, 102, 204)">Publications</h2>
-<div class="outline-text-2" id="text-org132476d">
-<p>
-<b>C</b>: Peer-Reviewed Conference / <b>J</b>: Journal 
-</p>
-
-<dt>[C14] ”DAM-VLA: A Dynamic Action Model-Based Vision-Language-Action Framework for Robot Manipulation”</dt>
-<dd>Xiongfeng Peng, Jiaqian Yu, Dingzhe Li, Yixiang Jin, Lu Xu, Mao Yamin, 张超, Weiming Li, Sujin Jang, Dongwook Lee, Daehyun Ji <b> <span class="underline"> Daehyun Ji</span></b>, ICRA 2026.
-<br/>
-<a href="">[paper]</a>
-</br>
-</dd>
-  
-<dt>[C13] ”Diffusion Transformer meets Multi-level Wavelet Spectrum for Single Image Super-Resolution”</dt>
-<dd>Peng Du, Hui Li, Han Xu, Paul Barom Jeon, Dongwook Lee, <b> <span class="underline"> Daehyun Ji</span></b>, Ran Yang, Feng Zhu, ICCV 2025.
-<br/>
-<a href="">[paper]</a>
-</br>
-</dd>
-  
-
-<dt>[C12] ”CDP: Constrained Diffusion Policies with Mirror Diffusion Model for Safety-Assured Imitation Learning”</dt>
-<dd>Taeho Ha, Hyunsu Cha, <b><span class="underline"> Daehyun Ji</span></b>, IROS 2025.
-<br/> <a href="">[paper]</a> </br>
-</dd>
-  
-
-<dt>[C11] ”Test-Time Adaptation for Online Vision-Language Navigation with Feedback-based Reinforcement Learning”</dt>
-<dd>Sungjune Kim*, Gyeongrok Oh*, Heeju Ko, <b><span class="underline"> Daehyun Ji</span></b>, Dongwook Lee, Byung-Jun Lee, Sujin Jang, Sangpil Kim, ICML 2025.
-<br/> <a href="">[paper]</a> </br>
-</dd>
-  
-<dt>[C10] ”3D Occupancy Prediction with Low-Resolution Queries via Prototype-aware View Transformation”</dt>
-<dd>Gyeongrok Oh*, Sungjune Kim*, Heeju Ko, HYUNG-GUN CHI, Jinkyu Kim, Dongwook Lee, <b><span class="underline"> Daehyun Ji</span></b>, Sungjoon Choi, Sujin Jang, Sangpil Kim, CVPR 2025.
-<br/> <a href="">[paper]</a></br>
-</dd>
-  
-<dt>[C9] ”Unveiling the Hidden: Online Vectorized HD Map Construction with Clip-Level Token Interaction and Propagation”</dt>
-<dd> Nayeon Kim*, Hongje Seong*, <b><span class="underline"> Daehyun Ji</span></b>, Sujin Jang, NeurIPS 2024.
-<br/>
-<a href="https://arxiv.org/abs/2411.11002">[paper]</a>
-</br>
-</dd>
-
-<dt>[C8] ”Unified Domain Generalization and Adaptation for Multi-View 3D Object Detection”, </dt>
-<dd>Gyusam Chang, Jiwon Lee, Donghyun Kim, Jinkyu Kim, Dongwook Lee, <b><span class="underline"> Daehyun Ji</span></b>, Sujin Jang, Sangpil Kim, Accepted!, NeurIPS 2024.
-<br/>
-<a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/6b7e1e96243c9edc378f85e7d232e415-Abstract-Conference.html">[paper]</a>
-</br>
-</dd>
-
-<dt>[C7] ”CMDA: Cross-Modal and Domain Adversarial Adaptation for LiDAR-based 3D Object Detection”, </dt>
-<dd>Gyusam Chang, Wonseok Roh, Sujin Jang, Dongwook Lee, <b><span class="underline"> Daehyun Ji</span></b>, Gyeongrok Oh, Jinsun Park, Jinkyu Kim, Sangpil Kim, AAAI 2024.
-<br/>
-<a href="https://ojs.aaai.org/index.php/AAAI/article/view/27857">[paper]</a>
-</br>
-</dd>
-
-<dt>[C6] ”STXD: Structural and Temporal Cross-Modal Distillation for Multi-View 3D Object Detection”</dt>
-<dd>Sujin Jang, Dae Ung Jo, Sung Ju Hwang (KAIST), Dongwook Lee, <b><span class="underline"> Daehyun Ji</span></b>, NeurIPS, 2023.
-<br/>
-<a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/5d8c01de2dc698c54201c1c7d0b86974-Abstract-Conference.html">[paper]</a>
-</br>
-</dd>
-
-<dt>[C5] ”D-3DLD: Depth-aware Voxel Space Mapping for Monocular 3D Lane Detection with Uncertainty”</dt>
-<dd>Nayeon Kim, Moonsub Byeon, <b><span class="underline"> Daehyun Ji</span></b>, Dokwan Oh, ICASSP, 2023.
-<br/>
-<a href="https://ieeexplore.ieee.org/abstract/document/10096483/">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[C4] ”Semi-supervised 360° Depth Estimation with Multiple Fisheye cameras”</dt>
-<dd>Jaewoo Lee, Daeul Park, Dongwook Lee, **<b><span class="underline"> Daehyun Ji</span></b>, ICASSP, 2022.
-<br/>
-<a href="https://ieeexplore.ieee.org/abstract/document/9746232/">[paper]</a>
-</br>
-</dd>
-
-<dt>[C3] ”Segmenting 2K-Videos at 36.5 FPS with 24.3 GFLOPs: Accurate and Lightweight Realtime Semantic Segmentation Networks”</dt>
-<dd>Dokwan Oh, <b><span class="underline"> Daehyun Ji</span></b>, Cheolhun Jang, Yoonsuk Hyun, Hong S. Bae, Sung Ju Hwang, ICRA, 2020.
-<br/>
-<a href="">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[C2] ”Guaranteed cost LPV controller design for a class of chaos synchrnoization”</dt>
-<dd>J.H. Koo, S.M.Lee, <b><span class="underline"> D.H Ji</span></b>, S.C.Won, ACC, 2011.
-<br/>
-<a href="">[paper]</a>
-</br>
-</dd>
-
-<dt>[C1] ”Robust Model Predictive Control for LPV systems with delayed state using relaxation matrices”</dt>
-<dd>S.C. Jeong, S.M.Lee, <b><span class="underline"> D.H Ji</span></b>,S.C.Won, ACC, 2011.
-<br/>
-<a href="">[paper]</a>
-</br>
-</dd>
-
-<dt>[J32] ”Fast and Easy Sensor Adaptation with Self-training”</dt>
-<dd>Jinhyuk Choi, Byeongju Lee, Seho Shin, **<b><span class="underline"> Daehyun Ji</span></b>, IEEE Access 11, 8870-8877, 2023
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0893608021004354">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[J31] ”Boosting Out-of-Distribution Image Detection With Epistemic Uncertainty”</dt>
-<dd>Dokwan Oh, <b><span class="underline"> Daehyun Ji</span></b>, Ohmin Kwon, Yoonsuk Hyun, IEEE ACCESS, 10, 109289-109298, 2022
-<br/>
-<a href="https://ieeexplore.ieee.org/document/9915595">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[J30] ”Stability and dissipativity criteria for neural networks with time-varying delays via an augmented zero equality approach”</dt>
-<dd> S.H.Lee, M.J.Park, **<b><span class="underline"> D.H Ji</span></b>, **O.M.Kwon, Neural Network, Volume 143, 209-217, November, 2021
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0893608021004354">[paper]</a>
-</br>
-</dd>
-
-<dt>[J29] ”How to Handle Noisy Labels for Robust Learning from Uncertainty”</dt>
-<dd> <b><span class="underline"> Daehyun Ji</span></b>, Dokwan Oh, Yoonsuk Hyun, Ohmin Kwon, Myeong-Jin Park, Neural Network, Volume 143, 209-217, November, 2021
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0893608021002446">[paper]</a>
-</br>
-</dd>
-
-<dt>[J28] ”Leader−following consensus problem of heterogeneous multi−agent systems with nonlinear dynamics using fuzzy disturbance observer”</dt>
-<dd>T.H Lee, J.H Park, <b><span class="underline"> D.H Ji</span></b>, H.Y Jung, Complexity 19,4, 20-31, 2014
-<br/>
-<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/cplx.21481">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[J27] ”Integral control for synchronization of complex dynamical networks with unknown non-identical nodes”</dt>
-<dd>D.W Lee,W.J Yoo, <b><span class="underline"> D.H Ji</span></b>, J.H Park, Applied Mathematics and Computation 224, 140-149, 2013
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0096300313009272">[paper]</a>
-</br>
-</dd>
-
-<dt>[J26] ”Adaptive synchronization for uncertain chaotic neural networks with mixed time delays using fuzzy disturbance observer”</dt>
-<dd>S.C Jeong, <b><span class="underline"> D.H Ji</span></b>, J.H Park, S.C Won, Applied Mathematics and Computation 219 11, 5984-5995, 2013
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0096300312012842">[paper]</a>
-</br>
-</dd>
-
-<dt>[J25] ”Adaptive synchronization for uncertain complex dynamical network using fuzzy disturbance observer”</dt>
-<dd>S.C Jeong, <b><span class="underline"> D.H Ji</span></b>, J.H Park, S.C Won, Nonlinear Dynamics 71, 1-2, 223-234, 2013
-<br/>
-<a href="https://link.springer.com/article/10.1007/s11071-012-0654-1">[paper]</a>
-</br>
-</dd>
-
-<dt>[J24] ”Precise tracking control of piezoelectric actuators based on a hysteresis observer”</dt>
-<dd><b><span class="underline"> D.H Ji</span></b>, J. H. Koo, W. J. Yoo, Ju H. Park, Nonlinear Dynamics 70, 3, 1969-1976, 2012
-<br/>
-<a href="https://link.springer.com/article/10.1007/s11071-012-0589-6">[paper]</a>
-</br>
-</dd>
-
-<dt>[J23] ”Decentralized guaranteed cost dynamic control for synchronization of a complex dynamical network with randomly switching topology”</dt>
-<dd>Tae H. Lee, Ju H. Park, <b><span class="underline"> D.H Ji</span></b>, H.Y.Jung, Applied Mathematics and Computation 219,3,996-1010, 2012
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0096300312007047">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[J22] ”State estimation of neural networks with time-varying delays and Markovian jumping parameter based on passivity theory”</dt>
-<dd>S. Lakshmanan, Ju H. Park, <b><span class="underline"> D.H Ji</span></b>, H.Y. Jung , G. Nagamani, Nonlinear, Dynamics 70,2,1421-1434, 2012
-<br/>
-<a href="https://link.springer.com/article/10.1007/s11071-012-0544-6">[paper]</a>
-</br>
-</dd>
-
-<dt>[J21] ”Robust adaptive backstepping synchronization for a class of uncertain chaotic systems using fuzzy disturbance observer”</dt>
-<dd><b><span class="underline"> D.H Ji</span></b>, S.C.Jeong, J.H. Park,S.C.Won, Nonlinear Dynamics 69, 3, 1125-1130, 2012
-<br/>
-<a href="https://link.springer.com/article/10.1007/s11071-012-0333-2">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[J20] ”An improved robust delay-dependent stability criterion for genetic regulatory networks with interval time delays”</dt>
-<dd>J.H. Koo, <b><span class="underline"> D.H Ji</span></b>, Ju. H. Park, Communications in Nonlinear Science and Numerical Simulation 17, 8, 3399-3405, 2012
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S1007570411006939">[paper]</a>
-</br>
-</dd>
-
-<dt>[J19] ”Guaranteed cost synchronization of a complex dynamical network via dynamic feedback control”</dt>
-<dd>Tae H. Lee, Ju H. Park, <b><span class="underline"> D.H Ji</span></b>, O.M. Kwon, S.M. Lee, Applied Mathematics and Computation 219, 3, 996-1010,2012
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0096300311014767">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[J18] ”Adaptive lag synchronization for uncertain complex dynamical network with delayed coupling”</dt>
-<dd><b><span class="underline"> D.H Ji</span></b>, S.C.Jeong, S.M.Lee, J.H. Park, S.C.Won, Applied Mathematics and Computation 218,9, 4872-4880, 2012
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0096300311012975">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[J17] ”Synchronization of neutral complex dynamical networks with coupling time varying delays”</dt>
-<dd><b><span class="underline"> D.H Ji</span></b>, D.W. Lee, J.H. Koo, S.C.Won, S.M.Lee, Ju.H. Park, Nonlinear Dynamics, 65,349–358, 2011
-<br/>
-<a href="https://link.springer.com/article/10.1007/s11071-010-9896-y">[paper]</a>
-</br>
-</dd>
-
-<dt>[J16] ”H∞ synchronization of nonlinear Bloch equations via dynamic feedback control approach”</dt>
-<dd><b><span class="underline"> D.H Ji</span></b>, J.H. Koo, S.C.Won, S.M.Lee, Ju.H. Park, Chin. Phys. B, 20, 7, 070502, 2011
-<br/>
-<a href="https://www.semanticscholar.org/paper/The-%E2%84%8B%E2%88%9E-synchronization-of-nonlinear-Bloch-systems-Ji-Koo/295a7e99c94c5ebc5148182c2973051e22a4304a">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[J15] ”Robust H∞ filtering for a class of discrete-time nonlinear systems”</dt>
-<dd>S.M.Lee, <b><span class="underline"> D.H Ji</span></b>, O.M. Kwon, Ju.H. Park, Applied Mathematics and Computation 217, 7991–799, 2011
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0096300311003262">[paper]</a>
-</br>
-</dd>
-
-<dt>[J14] ”Passivity−based control for Hopfield neural networks using convex representation”</dt>
-<dd><b><span class="underline"> D.H Ji</span></b>,J.H. Koo, S.C.Won, S.M.Lee, Ju.H. Park, Applied Mathematics and Computation, 217,13,1, 6168-6175, 2011
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0096300310013172">[paper]</a>
-</br>
-</dd>
-
-<dt>[J13] ”Synchronization of singular complex dynamical networks with time-varying delays”</dt>
-<dd>J.H. Koo, <b><span class="underline"> D.H Ji</span></b>, S.C.Won, Applied Mathematics and Computation, 217, 3916-3923, 2010
-<br/>
-<a href="https://link.springer.com/article/10.1007/s10957-010-9723-0">[paper]</a>
-</br>
-</dd>
-
-<dt>[J12] ”Synchronization criterion for Lur’e systems via delayed PD controller”</dt>
-<dd><b><span class="underline"> D.H Ji</span></b>, Ju H. Park, S.M.Lee, J.H. Koo, S.C.Won, J Optim Theory Appl,147, 2, 298–317, 2010
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0375960109000966">[paper]</a>
-</br>
-</dd>
-
-<dt>[J11] ”Adaptive fuzzy synchronization of different chaotic systems with stochastic unknown parameters”</dt>
-<dd>W.J. Yoo, <b><span class="underline"> D.H Ji</span></b>, S.C.Won, Modern Physics Letters B, 24,10,979-994, 2010
-<br/>
-<a href="https://www.worldscientific.com/doi/abs/10.1142/S0217984910023037">[paper]</a>
-</br>
-</dd>
-
-
-<dt>[J10] ”Synchronization of two different non-autonomous chaotic systems using fuzzy disturbance observer”</dt>
-<dd>W.J. Yoo, <b><span class="underline"> D.H Ji</span></b>, S.C.Won, Physics Letters A, 374 Pages 1354-1361,1, 2010
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0375960110000514">[paper]</a>
-</br>
-</dd>
-
-<dt>[J9] ”Synchronization criterion for Lur’e type complex dynamical networks with time-varying delay”</dt>
-<dd><b><span class="underline"> D.H Ji</span></b>, Ju H. Park, W.J. Yoo, S.C.Won, S.M. Lee, Physics Letters A , 374,10, 1218-1227, 22 Feb, 2010
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0375960110000320">[paper]</a>
-</br>
-</dd>
-
-<dt>[J8] ”Synchronization for chaotic Lur’e systems with sector restricted non-linearities via delayed feedback control”</dt>
-<dd>S.M. Lee, S.J. Choi, <b><span class="underline"> D.H Ji</span></b>, Ju H. Park, S.C.Won, Nonlinear Dynamics, 59, 277-288, 2010
-<br/>
-<a href="https://link.springer.com/article/10.1007/s11071-009-9537-5">[paper]</a>
-</br>
-</dd>
-
-<dt>[J7] ”Robust Memory State Feedback Model Predictive Control for Discrete-Time Uncertain State Delayed Systems”</dt>
-<dd><b><span class="underline"> D.H Ji</span></b>, Ju H. Park, W.J. Yoo, S.C.Won, Applied Mathematics and Computation,215,2035–2044, 2009
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0096300309007115">[paper]</a>
-</br>
-</dd>
-
-<dt>[J6] ”H infinity control of Lur’e sysetms with sector and slope restricted nonlinearities”</dt>
-<dd>Ju H. Park, <b><span class="underline"> D.H Ji</span></b>, S.C Won, S.M. Lee, S.J. Choi, Physics Letters A, 373, 3734–3740, 2009
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0375960109009943">[paper]</a>
-</br>
-</dd>
-
-<dt>[J5] ”Adaptive H infinity synchronization of unified chaotic systems” </dt>
-<dd>Ju H. Park, <b><span class="underline"> D.H Ji</span></b>, S.C Won, S.M. Lee, Modern physics letter B , 23, p.1-13, 2009
-<br/>
-<a href="https://www.worldscientific.com/doi/abs/10.1142/S021798490901934X">[paper]</a>
-</br>
-</dd>
-
-<dt>[J4] ”Master slave synchronization of Lur’e systems with sector and slope restricted nonlinearities”</dt>
-<dd> <b><span class="underline"> D.H Ji</span></b>, Ju H. Park, S.C Won, Physics Letter A, 373, 11, 1044-1050, 2009
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0375960109000966">[paper]</a>
-</br>
-</dd>
-
-<dt>[J3] ”H infinity synchronization of time delay chaotic systems”</dt>
-<dd> Ju H. Park, <b><span class="underline"> D.H Ji</span></b>, S.C Won, S.M. Lee, Applied Mathematics and Computation, 204,170-177, 2008
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S009630030800489X">[paper]</a>
-</br>
-</dd>
-
-<dt>[J2] ”H infinity synchronization of chaotic systems via dynamic feedback approach”</dt>
-<dd> S.M. Lee, <b><span class="underline"> D.H Ji</span></b>, Ju H. Park, S.C Won, Physics Letter A, 372, 27,4905-4912, 2008
-<br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0375960108008013">[paper]</a>
-</br>
-</dd>
-
-<dt>[J1] ”A robust model predictive control for LPV systems using relaxation matrices”</dt>
-<dd>S.M. Lee, Ju H Park, <b><span class="underline"> D.H Ji</span></b>, S.C.Won, IET Control Theory and Applications, 1,6, 1567-1573, 2007
-<br/>
-<a href="https://ieeexplore.ieee.org/abstract/document/5990636">[paper]</a>
-</br>
-</dd>
-
-</div>
-</div>
-
-
-<div id="outline-container-org91fa3b7" class="outline-2">
-<h2 style="color:rgb(0, 102, 204)">Patent</h2>
-<div class="outline-text-2" id="text-org132476d">
-  <dt>[P27] ”Device and method with camera pose estimation”</dt>
-  <dd>J Cheolhun, KOO Jahoo, <b><span class="underline">DH Ji</span></b>, 
-  <br/>US Patent App. 18/464,654, 2024</br>
-  </dd>
-
-  
-  <dt>[P26] ”Method and apparatus with object detector training”</dt>
-  <dd>S Jang, S Kim, J Kim, ROH Wonseok, G Chang, D Lee, <b><span class="underline">DH Ji</span></b>, 
-  <br/>US Patent App. 18/451,287, 2024</br>
-  </dd>
-  
-  <dt>[P25] ”Method and device with traffic light state determination”</dt>
-  <dd>KOO Jahoo, J Jeong, S Seho, <b><span class="underline">DH Ji</span></b>, 
-  <br/>US Patent App. 18/349,393, 2024</br>
-  </dd>
-
-  
-  <dt>[P24] ”Method of outputting prediction result using neural network, method of generating neural network, and apparatus therefor”</dt>
-  <dd>D Oh, CH Jang, <b><span class="underline">DH Ji</span></b>, 
-  <br/>US Patent 11,681,921, 2023</br>
-  </dd>
-  
-  <dt>[P23] ”Training data generating method for image processing, image processing method, and devices thereof”</dt>
-  <dd>WJ Lee, S Shin, DW Lee, <b><span class="underline">DH Ji</span></b>, 
-  <br/>US Patent 11,670,087, 2023</br>
-  </dd>
-
-  <dt>[P22] ”Method and apparatus with lane genertion”</dt>
-  <dd>N Kim, M Byeon, OH Dokwan, <b><span class="underline">DH Ji</span></b>, 
-  <br/>US Patent App. 17/862,821,2023</br>
-  </dd>
-
-  <dt>[P21] ”Image processing method and apparatus with neural network adjustment”</dt>
-  <dd>J Cheolhun, OH Dokwan, <b><span class="underline">DH Ji</span></b>, 
-  <br/>US Patent 11,636,698,2023</br>
-  </dd>
-
-  <dt>[P20] ”Method and apparatus for determining slope of road using side view camera of vehicle”</dt>
-  <dd>M Byeon, N Kim, <b><span class="underline">DH JI</span></b>, 
-  <br/>US Patent App. 17/685,917, 2023</br>
-  </dd> 
-
-  <dt>[P19] ”Method and apparatus for determining object position”</dt>
-  <dd>LEE Wonju, KOO Jahoo, Dongwook Lee, Jaewoo Lee, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 11525688/16135160, 2022</br>
-  </dd>  
-
-  <dt>[P18] ”Method and apparatus with estimation of distance between pedestrian and camera”</dt>
-  <dd>PARK Yonggonjong, JANG Cheolhun, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 17518762 2022</br>
-  </dd>  
-
-  <dt>[P17] ”Method and apparatus for determining driving information”</dt>
-  <dd><b><span class="underline">Dae Hyun JI</span></b>, Won-Ju Lee, Cheol-Hun Jang, Do-kwan Oh, Yoon-suk Hyun, 
-  <br/>US 11294392/16524377, 2022</br>
-  </dd>  
-
-
-  <dt>[P16] ”Method and apparatus for determining driving information”</dt>
-  <dd>Yoon-suk Hyun, Cheol-Hun Jang, Ja-Hoo Koo, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 11200432/16508931, 2021</br>
-  </dd>  
-
-  <dt>[P15] ”Image processing method and apparatus with neural network adjustment”</dt>
-  <dd>JANG Cheolhun, OH Dokwan, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 17368917, 2021</br>
-  </dd>  
-
-  <dt>[P14] ”Apparatus and method for converting image”</dt>
-  <dd>Jae-Woo Lee, Yoon-suk Hyun, Ja-Hoo Koo, Cheol-Hun Jang, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 11062153/16531859, 2021</br>
-  </dd>  
-
-  
-  <dt>[P13] ”Method and apparatus for recognizing object”</dt>
-  <dd>Jaewoo Lee, JANG Cheolhun, Dongwook Lee, LEEWonju, <b><span class="underline">Dae Hyun JI</span></b>, HYUN Yoonsuk,
-  <br/>US 10885787/16014078, 2021</br>
-  </dd>  
-
-  <dt>[P12] ”Method and apparatus with linearity detection”</dt>
-  <dd><b><span class="underline">Dae Hyun JI</span></b>, OH Dokwan, KOO Jahoo, Dongwook Lee, LEEWonju, Jaewoo Lee, JANG Cheolhun, HYUN Yoonsuk,
-  <br/>US 10853667/16166504, 2020</br>
-  </dd>  
-
-
-  <dt>[P11] ”Data processing method based on neural network, training method of neural network, and apparatuses thereof”</dt>
-  <dd>KOO Jahoo, <b><span class="underline">Dae Hyun JI</span></b>, HYUN Yoonsuk, 
-  <br/>US 16553466, 2020</br>
-  </dd>  
-
-  <dt>[P10] ”Method and apparatus for controlling vision sensor for autonomous vehicle”</dt>
-  <dd><b><span class="underline">Dae Hyun JI</span></b>, OH Dokwan, Dongwook Lee, Jaewoo Lee, JANG Cheolhun,
-  <br/>US 10657387/15472517, 2020</br>
-  </dd>  
-
-  <dt>[P9] ”Input method and electronic device using pen input device”</dt>
-  <dd><b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 10649552/16297859, 2020</br>
-  </dd>  
-
-  <dt>[P8] ”Method of outputting prediction result using neural network, method of generating neural network, and apparatus therefor”</dt>
-  <dd>Do-kwan OH, Cheol-Hun Jang, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 16660228, 2020</br>
-  </dd>  
-
-
-  <dt>[P7] ”Method and apparatus of detecting object of interest”</dt>
-  <dd>LEE Wonju, Jaewoo Lee, Dong-Wook Lee, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 10599930/15992234, 2020</br>
-  </dd>  
-
-
-  <dt>[P6] ”Apparatus and method for generating training data to train neural network determining information associated with road included in image”</dt>
-  <dd>Won-Ju Lee, Se-ho Shin, Dong-Wook Lee, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 16514661, 2020</br>
-  </dd>  
- 
-  <dt>[P5] ”Method and apparatus with vehicular longitudinal velocity control”</dt>
-  <dd>Jaewoo Lee, KOO Jahoo, Dongwook Lee, LEEWonju, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 16046138, 2020</br>
-  </dd>  
-
-
-  <dt>[P4] ”Method and apparatus for maintaining a lane”</dt>
-  <dd>KOO Jahoo, Dongwook Lee, Jaewoo Lee, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 16145700, 2019</br>
-  </dd>  
-
-
-  <dt>[P4] ”Vehicle movement prediction method and apparatus”</dt>
-  <dd>HYUN Yoonsuk, Jaewoo Lee, JANG Cheolhun, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 15992240, 2019</br>
-  </dd>  
-
-  <dt>[P3] ”Apparatus and method for changing route of vehicle based on emergency vehicle”</dt>
-  <dd>Dongwook Lee, KOO Jahoo, Jaewoo Lee, <b><span class="underline">Dae Hyun JI</span></b>, 
-  <br/>US 15996931, 2019</br>
-  </dd>  
-
-<dt>[P2] ”Method and apparatus for controlling alarm operation in a terminal”</dt>
-<dd> Kyung-Chun Moon, Joon-Woo Kim, <b><span class="underline">JI Dae-Hyun</span></b>, 
-<br/>US 9405560/13954567, 2016</br>
-</dd>
-
-
-<dt>[P1] ”Method arranging user interface objects in touch screen portable terminal and apparatus thereof”</dt>
-<dd> KIM Hyung-Gyu, <b><span class="underline">JI Dae-Hyun</span></b>, Joon-Woo Kim, 
-<br/>US 9182876/13657280, 2015</br>
-</dd>
-</div>
-</div>
-
-  
-<div id="outline-container-orgffae3e4" class="outline-2">
-  <h2 style="color:rgb(0, 102, 204)">Work Experience</h2>
-  <div class="outline-text-2" id="text-orgffae3e4">
-
-   <ul class="org-ul">
-      <li><b> Vertical AI 2 Team (AI Center) / Samsung Electronics </b>, Suwon, South Korea
-      </li>
-      <ul class="org-ul">
-        <li> Master (Vice President of Technology) (March. 2025 - Current)
-          <li>Head of Vertical AI 2 Team </li>
-          <li> Manufacturing, Logistics, Material, Device AI </li>
-        </li>
-      </li>
-      </ul>
-    </ul>
-
-    
-      <ul class="org-ul">
-      <li><b> Manufacturing/ Material Handling AI Lab(AI Center) / Samsung Electronics </b>, Suwon, South Korea
-      </li>
-      <ul class="org-ul">
-        <li> Master (Vice President of Technology) (March. 2025 - Current)
-          <li>Head of Lab </li>
-          <li> AI & Robotics technologies for production optimization and logistics automation </li>
-        </li>
-      </li>
-      </ul>
-    </ul>
-
-    <ul class="org-ul">
-      <li><b>Computer Vision TU, AI Research Center, Samsung Advanced Institute of Technology (SAIT)</b>, Suwon, South Korea
-      </li>
-      <ul class="org-ul">
-        <li>Master (Vice President of Technology) (Nov. 2023 - 2024)
-          <li>Project Lead of Autonomous Driving Project</li>
-          <li>AI based Autonomous Machine = AI + Robotics</li>
-        </li>
-      </li>
-      </ul>
-    </ul>
-
-  
-    <ul class="org-ul">
-    <li><b>Computer Vision TU, AI Research Center, Samsung Advanced Institute of Technology (SAIT)</b>, Suwon, South Korea
-    </li>
-    <ul class="org-ul">
-      <li>Principle Researcher (Research Master), Autonomous Driving (March. 2020 - Nov. 2023)
-        <li>Project Lead </li>
-        <li>AI based Autonomous Driving </li>
-      </li>
-    </li>
-    </ul>
-  </ul>
-  
-  <ul class="org-ul">
-    <li><b>Mila - Quebec AI Institute </b>, Montreal, Quebec, Canada
-    <ul class="org-ul">
-      <li>Visiting Researcher (Jan. 2019 - Jan. 2020)</li>
-      <li>Artificial Intelligence (Noisy Labeling, Unceratainty Aware Knowledge Distillation) </li>
-    </li>
-    </ul>
-  </ul>
-  
-  <ul class="org-ul">
-    <li><b>A-Project Team, System LSI, Samsung Electronics Co.</b>, Hwaseong, South Korea
-    <ul class="org-ul">
-      <li>Principle Engineer, Core Algorithm Group (Sep. 2018 - May. 2020)</li>
-      <li>ADAS SoC Perception Solution </li>
-    </li>
-    </ul>
-  </ul>
-  
-  <div class="outline-text-2" id="text-orgffae3e4">
-    <ul class="org-ul">
-    <li><b>SW Solution Lab, Device & System Center, Samsung Advanced Institute of Technology (SAIT)</b>, Suwon, South Korea
-    </li>
-    <ul class="org-ul">
-      <li> Principle Researcher, Autonomous Driving (Mar. 2015 – Aug. 2018)
-        <li>Project Leader (Mar. 2015 – Feb. 2018) </li>
-        <li>Deep Learning (Detection, Segmentation), Computer Vision (Localization & Mapping), Path Planning & Control </li>
-      </li>
-    </li>
-    </ul>
-  </ul>
-  
-  <ul class="org-ul">
-    <li><b>Mobile Communication Division, Samsung Electronics Co.</b>, Suwon, South Korea
-    <ul class="org-ul">
-      <li>Senior SW Engineer (Sep. 2009 - Aug. 2015)</li>
-      <li>Samsung Galaxy, System SW (Kernel / Device Driver / Framework / Application ) </li>
-    </li>
-    </ul>
-  </ul>
-  
-  </dl>
-  </div>
-  </div>
-
-  <div id="outline-container-org3b109b4" class="outline-2">
-    <h2 style="color:rgb(0, 102, 204)">Education</h2>
-    <div class="outline-text-2" id="text-org3b109b4">
-    <ul class="org-ul">
-      <li><b>POSETCH (Pohang University of Science and Technology) </b>, Pohang, Korea
-      <ul class="org-ul">
-        <li>Integrated MS/Ph.D., Department of Electrical Engineering (Mar 2003 - Aug 2009)</li>
-        <li>Major: Robotics & Control</a></li>
-        <li>Advisor: Dr. Sangchul Won</a></li>
-        <li>Thesis: A Study on Sychronization for Nonlinear Chaotic Systems</li>
-      </ul>
-    </ul>
-    
-    <ul class="org-ul">
-      <li><b>Kyungbook National University</b>, Daegu, South Korea
-      <ul class="org-ul">
-        <li>B.S., Department of Electrical Engineering (Mar 1996 - Feb 2003)</li>
-      </li>
-      </ul>
-    </ul>
-    </div>
+  <div id="content">
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-photo">
+          <img src="assets/daehyunji.jpg" alt="Daehyun Ji" />
+        </div>
+        <div class="hero-text">
+          <div class="eyebrow">AI · Robotics · Autonomous Machines</div>
+          <h1>Derek Daehyun Ji</h1>
+          <p>Vice President of Technology (Master), Samsung Electronics, Suwon, South Korea</p>
+          <p>Head of the Manufacturing &amp; Material Handling AI Lab and Vertical AI 2 Team, leading AI and robotics technologies for production optimization and logistics automation.</p>
+          <p>Research areas: autonomous machines, robot manipulation, computer vision, embodied AI, autonomous driving, and robust learning.</p>
+          <p>captainzone [at] gmail.com · derek.ji [at] samsung.com</p>
+          <div class="hero-links">
+            <a href="https://scholar.google.co.kr/citations?user=WEZZefcAAAAJ&amp;hl=ko">Google Scholar</a>
+            <a href="https://www.linkedin.com/in/captainzone/">LinkedIn</a>
+            <a href="https://www.facebook.com/groups/AutonomousDrivingKR">Facebook</a>
+            <a href="assets/cv.pdf">CV</a>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <div class="grid">
+      <div class="col-main">
+        <div class="card highlight-card">
+          <h2>Scholar Snapshot</h2>
+          <p>
+            This section is manually synchronized from the public Google Scholar profile and can be updated whenever the profile numbers change.
+          </p>
+          <div class="metrics">
+            <div class="metric">
+              <strong>2,019</strong>
+              Total citations
+            </div>
+            <div class="metric">
+              <strong>Top 20</strong>
+              Public Scholar items surfaced below
+            </div>
+            <div class="metric">
+              <strong>84</strong>
+              Highest visible patent citations in the surfaced Scholar list
+            </div>
+          </div>
+          <p class="footer-note">Source reference date: Google Scholar profile snapshot surfaced by search results.</p>
+        </div>
 
-<div id="outline-container-org91fa3b7" class="outline-2">
-<h2 style="color:rgb(0, 102, 204)">Honors and Awards</h2>
-<div class="outline-text-2" id="text-org91fa3b7">
+        <div class="card">
+          <h2>About</h2>
+          <p>
+            Daehyun Ji is a technology leader and researcher working at the intersection of AI, computer vision, robotics, and real-world autonomous systems.
+            He currently leads industrial AI initiatives at Samsung Electronics focused on production intelligence, logistics automation, and autonomous machines.
+            Previously, he led AI technology development for ADAS and autonomous driving at Samsung Advanced Institute of Technology (SAIT), and also worked as a Visiting Researcher at Mila under Professor Simon Lacoste-Julien.
+          </p>
+          <p>
+            His broader mission is to create practical, high-impact AI that benefits people widely, with recent work spanning robot manipulation, vision-language-action systems, safety-aware imitation learning, navigation, 3D scene understanding, and domain adaptation.
+          </p>
+          <div class="chips">
+            <span class="chip">Embodied AI</span>
+            <span class="chip">Robot Manipulation</span>
+            <span class="chip">Vision-Language-Action</span>
+            <span class="chip">Autonomous Driving</span>
+            <span class="chip">3D Vision</span>
+            <span class="chip">Industrial AI</span>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <strong>2026</strong>
+              Latest public paper year
+            </div>
+            <div class="metric">
+              <strong>AI + Robotics</strong>
+              Current strategic focus
+            </div>
+            <div class="metric">
+              <strong>Samsung</strong>
+              2009–present
+            </div>
+          </div>
+        </div>
 
-  <ul class="org-ul">
-    <li><b>DS Vision Award (Inclusion), DS Division, Samsung Electronics</b> (2024)
-    <ul class="org-ul">
-    <li> Automotive Community </li>
-    </ul>
-    </ul>
+        <div class="card">
+          <h2>Selected Recent Research</h2>
 
+          <div class="pub first">
+            <div class="pub-title">DAM-VLA: A Dynamic Action Model-Based Vision-Language-Action Framework for Robot Manipulation</div>
+            <div class="pub-meta">ICRA 2026 · Xiongfeng Peng, Jiaqian Yu, Dingzhe Li, Yixiang Jin, Lu Xu, Yamin Mao, Chao Zhang, Weiming Li, Sujin Jang, Dongwook Lee, Daehyun Ji</div>
+            <div class="badges">
+              <span class="badge dark">Recent Featured Work</span>
+              <span class="badge">Embodied AI</span>
+              <span class="badge">Robot Manipulation</span>
+            </div>
+            <p class="muted">A recent embodied AI / robot manipulation work that integrates VLM reasoning with diffusion-based action models to coordinate arm movement and gripper control in dynamic environments.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2603.00926">Paper</a>
+              <a href="https://research.samsung.com/blog/DAM-VLA-A-Dynamic-Action-Model-Based-Vision-Language-Action-Framework-for-Robot-Manipulation">Samsung Research Blog</a>
+            </div>
+          </div>
 
-<ul class="org-ul">
-      <li><b>SAIT Vision Award, SAIT, Samsung Electronics</b> (2023)
-      <ul class="org-ul">
-      <li> Digital Transformation</li>
-      </ul>
-      </ul>
+          <div class="pub">
+            <div class="pub-title">Diffusion Transformer meets Multi-level Wavelet Spectrum for Single Image Super-Resolution</div>
+            <div class="pub-meta">ICCV 2025 · Peng Du, Hui Li, Han Xu, Paul Barom Jeon, Dongwook Lee, Daehyun Ji, Ran Yang, Feng Zhu</div>
+            <div class="badges">
+              <span class="badge">Recent Featured Work</span>
+              <span class="badge">Image Restoration</span>
+            </div>
+            <p class="muted">Introduces a diffusion-transformer approach that combines wavelet-spectrum information for higher quality image super-resolution.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2511.01175">Paper</a>
+            </div>
+          </div>
 
+          <div class="pub">
+            <div class="pub-title">CDP: Constrained Diffusion Policies with Mirror Diffusion Model for Safety-Assured Imitation Learning</div>
+            <div class="pub-meta">IROS 2025 · Taeoh Ha, Hyunsoo Cha, Daehyun Ji</div>
+            <div class="badges">
+              <span class="badge">Recent Featured Work</span>
+              <span class="badge">Safety-Aware Robotics</span>
+            </div>
+            <p class="muted">A safety-aware imitation learning framework using constrained diffusion policies for robot behavior under explicit safety boundaries.</p>
+            <div class="pub-links">
+              <a href="https://dblp.org/rec/conf/iros/HaCJ25">Bibliographic Record</a>
+            </div>
+          </div>
 
-<ul class="org-ul">
-<li><b>Distinguished Engineer Award (DS 부문 최고기술인상), DS Division, Samsung Electronics</b> (2022)
-<ul class="org-ul">
-<li>ADAS / L4 Autonomous Driving</li>
-</ul>
-</ul>
+          <div class="pub">
+            <div class="pub-title">Test-Time Adaptation for Online Vision-Language Navigation with Feedback-based Reinforcement Learning</div>
+            <div class="pub-meta">ICML 2025 · Sungjune Kim, Gyeongrok Oh, Heeju Ko, Daehyun Ji, Dongwook Lee, Byung-Jun Lee, Sujin Jang, Sangpil Kim</div>
+            <div class="badges">
+              <span class="badge">Recent Featured Work</span>
+              <span class="badge">Embodied Navigation</span>
+            </div>
+            <p class="muted">Addresses online adaptation for VLN agents in unfamiliar environments using feedback-driven reinforcement learning at deployment time.</p>
+            <div class="pub-links">
+              <a href="https://proceedings.mlr.press/v267/kim25ad.html">Paper</a>
+            </div>
+          </div>
 
-<ul class="org-ul">
-<li><b>Boundless Search for Breakthroughs Award (무한탐구상), SAIT, Samsung Electronics</b> (2022)
-  <ul class="org-ul">
-  <li>Autonomous Driving</li>
-</ul>
-</ul>
+          <div class="pub">
+            <div class="pub-title">3D Occupancy Prediction with Low-Resolution Queries via Prototype-aware View Transformation</div>
+            <div class="pub-meta">CVPR 2025 · Gyeongrok Oh, Sungjune Kim, Heeju Ko, Hyung-gun Chi, Jinkyu Kim, Dongwook Lee, Daehyun Ji, Sungjoon Choi, Sujin Jang, Sangpil Kim</div>
+            <div class="badges">
+              <span class="badge">Recent Featured Work</span>
+              <span class="badge">3D Scene Understanding</span>
+            </div>
+            <p class="muted">Proposes ProtoOcc, improving 3D occupancy prediction under computational constraints while preserving strong scene understanding performance.</p>
+            <div class="pub-links">
+              <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Oh_3D_Occupancy_Prediction_with_Low-Resolution_Queries_via_Prototype-aware_View_Transformation_CVPR_2025_paper.pdf">Paper</a>
+              <a href="https://kuai-lab.github.io/cvpr2025protoocc/">Project</a>
+            </div>
+          </div>
 
-<ul class="org-ul">
-<li><b>Gold Award, Samsung Best Paper, Samsung Electronics</b> (2018)
-  <ul class="org-ul">
-  <li>Uncertainty-aware Knowledge Distillation for Realtime Scene Segmentation</li>
-</ul>
-</ul>
+          <div class="pub">
+            <div class="pub-title">Unified Domain Generalization and Adaptation for Multi-View 3D Object Detection</div>
+            <div class="pub-meta">NeurIPS 2024 · Gyusam Chang, Jiwon Lee, Donghyun Kim, Jinkyu Kim, Dongwook Lee, Daehyun Ji, Sujin Jang, Sangpil Kim</div>
+            <div class="badges">
+              <span class="badge">Recent Featured Work</span>
+              <span class="badge">Domain Adaptation</span>
+            </div>
+            <p class="muted">Presents a practical framework for robust multi-view 3D object detection across unseen domains with label-efficient adaptation.</p>
+            <div class="pub-links">
+              <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/6b7e1e96243c9edc378f85e7d232e415-Abstract-Conference.html">Paper</a>
+              <a href="https://github.com/SAITPublic/UDGA">Code</a>
+            </div>
+          </div>
 
-<ul class="org-ul">
-<li><b>Samsung Future Creator Award, DS Division, Samsung Electronics</b> (2018)
-  <ul class="org-ul">
-  <li>Autonomous Driving Platform</li>
-</ul>
-</ul>
+          <div class="pub">
+            <div class="pub-title">Unveiling the Hidden: Online Vectorized HD Map Construction with Clip-Level Token Interaction and Propagation</div>
+            <div class="pub-meta">NeurIPS 2024 · Nayeon Kim, Hongje Seong, Daehyun Ji, Sujin Jang</div>
+            <p class="muted">Focuses on online vectorized HD map construction for autonomous driving, addressing occlusion and temporal propagation challenges.</p>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2411.11002">Paper</a>
+            </div>
+          </div>
 
-<ul class="org-ul">
-<li><b>Bronze Award, Samsung Best Paper, Samsung Electronics</b> (2017)
-  <ul class="org-ul">
-  <li>Selective Knowledge Distillation for Real-Time Object Detection</li>
-</ul>
-</ul>
+          <div class="pub">
+            <div class="pub-title">CMDA: Cross-Modal and Domain Adversarial Adaptation for LiDAR-Based 3D Object Detection</div>
+            <div class="pub-meta">AAAI 2024 · Gyusam Chang, Wonseok Roh, Sujin Jang, Dongwook Lee, Daehyun Ji, Gyeongrok Oh, Jinsun Park, Jinkyu Kim, Sangpil Kim</div>
+            <p class="muted">Introduces image-assisted unsupervised domain adaptation for LiDAR-based 3D object detection through cross-modal semantic transfer.</p>
+            <div class="pub-links">
+              <a href="https://ojs.aaai.org/index.php/AAAI/article/view/27857">Paper</a>
+            </div>
+          </div>
 
-<ul class="org-ul">
-<li><b>Leaders the world’s top 100 technologies in 2025, NAEK</b> (2017)
-  <ul class="org-ul">
-  <li>Autonomous Driving</li>
-</ul>
-</ul>
+          <div class="pub">
+            <div class="pub-title">STXD: Structural and Temporal Cross-Modal Distillation for Multi-View 3D Object Detection</div>
+            <div class="pub-meta">NeurIPS 2023 · Sujin Jang, Dae Ung Jo, Sung Ju Hwang, Dongwook Lee, Daehyun Ji</div>
+            <p class="muted">A cross-modal distillation framework that transfers structural and temporal cues from LiDAR teachers to image-based 3D detectors.</p>
+            <div class="pub-links">
+              <a href="https://papers.nips.cc/paper_files/paper/2023/hash/5d8c01de2dc698c54201c1c7d0b86974-Abstract-Conference.html">Paper</a>
+            </div>
+          </div>
 
-<ul class="org-ul">
-  <li><b>Best AP Award, SAIT, Samsung Electronics</b> (2017)
-    <ul class="org-ul">
-    <li>Computer Vision in Autonomous Driving</li>
-  </ul>
-  </ul>
+          <p class="footer-note">For the complete publication history, see the Google Scholar profile linked above. Recent papers are highlighted separately from older, highly cited work.</p>
+        </div>
 
-</div>
-</div>
+        <div class="card">
+          <h2>Selected Most-Cited Papers &amp; Patents</h2>
 
-<div id="outline-container-orgabc2c95" class="outline-2">
-<h2 style="color:rgb(0, 102, 204)">Scientific Community Service</h2>
-<div class="outline-text-2" id="text-orgabc2c95">
-<ul class="org-ul">
-<li>[NeurIPS] Reviewer, Conference on Neural Information Processing Systems </li>
-<li>[IEEE ECCV/ICCV] Reviewer, European / International Conference on Computer Vision </li>
-<li>[IEEE CVPR] Reviewer, Conference on Computer Vision and Pattern Recognition </li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgabc2c95" class="outline-2">
-  <h2 style="color:rgb(0, 102, 204)">Invited Semnar</h2>
-  <div class="outline-text-2" id="text-orgabc2c95">
-  <ul class="org-ul">
-    <li> "	AI Research at Samsung", Busan, South Korea, KCCV 2024, 2024.8.13</li>
-    <li> "Generative AI in Autonmous Driving", Seoul, South Korea, 제 4회 이화여자대학교 인공지능융합혁신인재양성 산학협력포럼, 2024.04.04</li>
-    <li> "Computer Vision for Autonomous Driving", Seoul, South Korea, 한국자동차 공학회 이화세미나, 2024.03.12</li>
-  <li> "SAIT Autonmous Driving", Seoul, South Korea, 2023 IoT Technology & Business Forum, 2023.05.17</li>
-  <li> "SAIT Autonmous Driving", Jeju, South Korea, IPIU 2023, 2023.02.08</li>
-  <li> "Computer Vision & Autonomous Driving", Daegu, South Korea, Kyungbook National University, 2021.12.06</li>
-  <li> "Automotive Vision", Cheongju, South Korea, Chungbook National University, 2021.06.20</li>
-  <li> "Automotive Vision", Daegu, South Korea, Kyungbook National University, 2020.06.01</li>
-  <li> "Autonomous Driving", Daegu, South Korea, Kyungbook National University, 2018.10.12</li>
-  <li> "Autonomous Driving Platform", Seoul, South Korea, The Institute of Electronics and Information Engieers (IEIE), 2018.06.17</li>
-  <li> "Realtime Situation Understanding & Autonomous Driving", Seoul, South Korea, Institute of Semiconductor Engineers (ISE), 2018.04.26</li>
-  <li> "Autonomous Driving", Seoul, South Korea, AI & Deep Learning Summit, 2018.04.06</li>
-  <li> "Realtime Situation Understanding", Jeju, South Korea, Institue of Embedded Engineering of Korea (IEMEK), 2017.11.10</li>
-  <li> "Introduction of Deep Learning", Seoul, South Korea, Sogang University, 2016.11.22</li>
-  </ul>
+          <div class="pub first">
+            <div class="pub-title">Adaptive lag synchronization for uncertain complex dynamical network with delayed coupling</div>
+            <div class="pub-meta">Applied Mathematics and Computation, 2012</div>
+            <div class="badges">
+              <span class="badge dark">122 citations</span>
+              <span class="badge">Paper</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">H∞ synchronization of chaotic systems via dynamic feedback approach</div>
+            <div class="pub-meta">Physics Letters A, 2008</div>
+            <div class="badges">
+              <span class="badge dark">115 citations</span>
+              <span class="badge">Paper</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">H∞ synchronization of time-delayed chaotic systems</div>
+            <div class="pub-meta">Applied Mathematics and Computation, 2008</div>
+            <div class="badges">
+              <span class="badge dark">96 citations</span>
+              <span class="badge">Paper</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Guaranteed cost synchronization of a complex dynamical network via dynamic feedback control</div>
+            <div class="pub-meta">Applied Mathematics and Computation, 2012</div>
+            <div class="badges">
+              <span class="badge dark">95 citations</span>
+              <span class="badge">Paper</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Synchronization of neutral complex dynamical networks with coupling time-varying delays</div>
+            <div class="pub-meta">Nonlinear Dynamics, 2011</div>
+            <div class="badges">
+              <span class="badge dark">89 citations</span>
+              <span class="badge">Paper</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Method arranging user interface objects in touch screen portable terminal and apparatus thereof</div>
+            <div class="pub-meta">US Patent 9,182,876, 2015</div>
+            <div class="badges">
+              <span class="badge dark">84 citations</span>
+              <span class="badge">Patent</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://patents.google.com/patent/US20130111384A1/en">Patent</a>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Synchronization for chaotic Lur’e systems with sector-restricted nonlinearities via delayed feedback control</div>
+            <div class="pub-meta">Nonlinear Dynamics, 2010</div>
+            <div class="badges">
+              <span class="badge dark">80 citations</span>
+              <span class="badge">Paper</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Adaptive synchronization for uncertain chaotic neural networks with mixed time delays using fuzzy disturbance observer</div>
+            <div class="pub-meta">Applied Mathematics and Computation, 2013</div>
+            <div class="badges">
+              <span class="badge dark">76 citations</span>
+              <span class="badge">Paper</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Synchronization criterion for Lur'e type complex dynamical networks with time-varying delay</div>
+            <div class="pub-meta">Physics Letters A, 2010</div>
+            <div class="badges">
+              <span class="badge dark">73 citations</span>
+              <span class="badge">Paper</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Apparatus and method for generating training data to train neural network determining information associated with road included in image</div>
+            <div class="pub-meta">US Patent 10,579,058, 2020</div>
+            <div class="badges">
+              <span class="badge dark">71 citations</span>
+              <span class="badge">Patent</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Passivity-based control for Hopfield neural networks using convex representation</div>
+            <div class="pub-meta">Applied Mathematics and Computation, 2011</div>
+            <div class="badges">
+              <span class="badge dark">67 citations</span>
+              <span class="badge">Paper</span>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="pub-title">Method and apparatus of detecting object of interest</div>
+            <div class="pub-meta">US Patent 10,599,930, 2020</div>
+            <div class="badges">
+              <span class="badge dark">66 citations</span>
+              <span class="badge">Patent</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://patents.google.com/patent/US10599930B2/en">Patent</a>
+            </div>
+          </div>
+
+          <p class="footer-note">Citation counts in this section are manually entered so they can be updated directly when the Scholar profile changes.</p>
+        </div>
+
+        <div class="card">
+          <h2>Career Timeline</h2>
+          <ul class="timeline">
+            <li>
+              <span class="role">Vertical AI 2 Team / Manufacturing &amp; Material Handling AI Lab, Samsung Electronics</span>
+              <span class="period">March 2025 – Present · Vice President of Technology (Master), Head of Lab / Team</span>
+              Leads AI and robotics technologies for manufacturing, logistics, material handling, and device intelligence.
+            </li>
+            <li>
+              <span class="role">Computer Vision TU, AI Research Center, SAIT</span>
+              <span class="period">November 2023 – 2024 · Vice President of Technology (Master)</span>
+              Led autonomous driving research and broader AI-based autonomous machine initiatives.
+            </li>
+            <li>
+              <span class="role">Computer Vision TU, AI Research Center, SAIT</span>
+              <span class="period">March 2020 – November 2023 · Principal Researcher (Research Master)</span>
+              Project lead for autonomous driving with focus on perception, 3D scene understanding, and deployment-oriented AI.
+            </li>
+            <li>
+              <span class="role">Mila – Quebec AI Institute</span>
+              <span class="period">January 2019 – January 2020 · Visiting Researcher</span>
+              Worked on noisy labels, uncertainty-aware learning, and knowledge distillation.
+            </li>
+            <li>
+              <span class="role">A-Project Team, System LSI, Samsung Electronics</span>
+              <span class="period">September 2018 – May 2020 · Principal Engineer</span>
+              Developed ADAS SoC perception solutions.
+            </li>
+            <li>
+              <span class="role">SW Solution Lab, Device &amp; System Center, SAIT</span>
+              <span class="period">March 2015 – August 2018 · Principal Researcher</span>
+              Led deep learning and computer vision efforts for autonomous driving, including detection, segmentation, mapping, planning, and control.
+            </li>
+            <li class="last">
+              <span class="role">Mobile Communication Division, Samsung Electronics</span>
+              <span class="period">September 2009 – August 2015 · Senior SW Engineer</span>
+              Worked on Samsung Galaxy system software spanning kernel, device drivers, framework, and applications.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-side">
+        <div class="card">
+          <h2>Education</h2>
+          <ul class="list-tight">
+            <li><strong>POSTECH</strong><br />Integrated M.S./Ph.D. in Electrical Engineering<br />Major: Robotics &amp; Control<br />Advisor: Prof. Sangchul Won</li>
+            <li><strong>Kyungpook National University</strong><br />B.S. in Electrical Engineering</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Scholar Notes</h2>
+          <ul class="list-tight">
+            <li>Total citations currently shown on the public profile: <strong>2,019</strong></li>
+            <li>Profile: Samsung Electronics / AI Center / VP of Technology</li>
+            <li>Main themes surfaced on Scholar: autonomous driving, robotics, deep learning, control theory</li>
+            <li>Manual update tip: replace the numbers inside the citation badges when the profile changes</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Honors &amp; Awards</h2>
+          <ul class="list-tight">
+            <li>DS Vision Award (Inclusion), Samsung Electronics, 2024</li>
+            <li>SAIT Vision Award, Samsung Electronics, 2023</li>
+            <li>Distinguished Engineer Award, DS Division, Samsung Electronics, 2022</li>
+            <li>Boundless Search for Breakthroughs Award, SAIT, 2022</li>
+            <li>Gold Award, Samsung Best Paper, 2018</li>
+            <li>Samsung Future Creator Award, 2018</li>
+            <li>Bronze Award, Samsung Best Paper, 2017</li>
+            <li>Best AP Award, SAIT, 2017</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Patent Highlights</h2>
+          <ul class="list-tight">
+            <li><strong>84 citations</strong> · Method arranging user interface objects in touch screen portable terminal and apparatus thereof</li>
+            <li><strong>71 citations</strong> · Apparatus and method for generating training data to train neural network determining information associated with road included in image</li>
+            <li><strong>66 citations</strong> · Method and apparatus of detecting object of interest</li>
+            <li>Device and method with camera pose estimation · US Patent App. 18/464,654 (2024)</li>
+            <li>Method and apparatus with object detector training · US Patent App. 18/451,287 (2024)</li>
+            <li>Method and device with traffic light state determination · US Patent App. 18/349,393 (2024)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Community &amp; Talks</h2>
+          <ul class="list-tight">
+            <li>Reviewer: NeurIPS, CVPR, ECCV, ICCV</li>
+            <li>KCCV 2024 · “AI Research at Samsung”</li>
+            <li>Ewha AI Industry-Academia Forum 2024 · “Generative AI in Autonomous Driving”</li>
+            <li>KSAE Ewha Seminar 2024 · “Computer Vision for Autonomous Driving”</li>
+            <li>IPIU 2023 · “SAIT Autonomous Driving”</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-
-</div>
 </body>
 </html>
-
